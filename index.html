@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<title>HNG TASK 1</title>
+	</head>
+	<body>
+		<main>
+			<section class="v-hero">
+				<div class="v-content">
+					<span class="v-b">Slack Name</span>
+					<h1 class="v-title" testid="slackUserName">Vickkk</h1>
+				</div>
+				<div>
+					<span class="v-b">Slack Display Picture</span>
+					<div class="v-profile-image">
+						<img src="./VICKKK (2).jpg" alt="Vickkk" data-testid="slackDisplayImage" class="img-fluid" />
+					</div>
+				</div>
+			</section>
+			<section>
+				<ul class="v-data-container">
+					<li class="v-each-data">
+						<div><h2 class="v-title">Current Day of the Week:</h2></div>
+						<h2 class="v-value v-day-of-the-week" data-testid="currentDayOfTheWeek">Thursday</h2>
+					</li>
+					<li class="v-each-data">
+						<div><h2 class="v-title">Current UTC Time:</h2></div>
+						<h2 class="v-value v-time" data-testid="currentUTCTime">Write the time</h2>
+					</li>
+					<li class="v-each-data">
+						<div><h2 class="v-title">Track:</h2></div>
+						<h2 class="v-value" data-testid="myTrack">Frontend</h2>
+					</li>
+					<li class="v-each-data">
+						<div><h2 class="v-title">GitHub URL:</h2></div>
+						<a href="">
+							<span class="v-value v-link" data-testid="“githubURL”">Frontend</span>
+						</a>
+					</li>
+				</ul>
+			</section>
+		</main>
+
+		<script>
+			(() => {
+				const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				const dayOftheWeek = document.querySelector(".v-day-of-the-week");
+				const time = document.querySelector(".v-time");
+
+				const date = new Date();
+				const day = date.getDay();
+				const dateInMs = date.getTime();
+
+				dayOftheWeek.innerHTML = `${days[day]}`;
+				time.innerHTML = `${dateInMs}`;
+			})();
+		</script>
+	</body>
+</html>
